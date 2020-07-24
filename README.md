@@ -5,8 +5,6 @@ The python pytest-tox-travis-codecov example repository!
 
 [![codecov](https://codecov.io/gh/alex4200/pytracov/branch/master/graph/badge.svg)](https://codecov.io/gh/alex4200/pytracov)
 
-[![contributors](https://github.com/alex4200/pytracov/graphs/contributors)]
-
 ## Goal
 This repo is an example repository showing how to setup your code using **py**test, **t**ox, t**ra**vis and code**cov**.
 # Tools
