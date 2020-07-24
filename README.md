@@ -27,6 +27,9 @@ In the example it is used to create a graphical overview of the coverage (especi
 
 
 # Setup
+I personally find the setup very complicated, as you have to login to each service, approve the access to github each, and add your repo - for each service in a different fashion. 
+
+As I am no expert with these CI tools I created this example to see how it all works together. Unfortunately, there is not a single simple tool to do so. But with these tools you have a zillion features you probably never ever will use! 
 
 ## Repository setup
 The repository contains example files for the setup of the tools. The relevant files are `.travis.yml`, `tox.ini` and `setup.py`. 
@@ -36,10 +39,32 @@ You can check the `tox` setup by running the command `tox -e py36` in the top le
 ## Service setup
 
 ### travis
-To setup the travis service, you have to do the following:
+To setup the *travis* service, you have to do the following:
 
-TBD
+1. Go to [travis-ci.com](travis-ci.com).
+2. Log in with your *github* account.
+3. Click on your profile picture.
+4. On the Profile page the tab "Repositories" should be selected; then you click "Manage repositories on GitHub". You will be redirected to *github*.
+5. On the github page you can approve access to either all your repositories, or you can select the one you want. 
+6. Click on "Approve and install". 
+7. You will be redirected back to *travis*, where your repository should appear in a list.
+8. Click on your repository. It will probably not contain a lot.
+9. But you can click on the badge on the top, where you casn copy-and-paste the "RESULT" URL to your Readme to show a badge of the build status. 
+10. When you do a pull request, *travis* is activated, the test are being run, and the badge image is updated automatically. 
+
+
 ### codecov 
-To setup the codecov service, you have to do the following:
+To setup the *codecov* service, you have to do the following:
 
-TBD
+1. Go to [codecov.io](codecov.io).
+2. Log in with your *github* account.
+3. Click on your *github* name.
+4. Click on "Add new repository".
+5. Here you should see your repositories. If not, click on the "Sync team repository list" on the bottom.
+6. Select the repository to add. That's it. If you see the page with the title "Let's get your project covered." no further actions are required. It is a bit misleading.
+
+## How it works
+To see the setup in action, feel free to edit the file `editme.txt` and just edit something. If you are done, click "Create a new branch" at the buttom, and create a new pull request. 
+This should trigger a build with the badges updated. 
+
+You can also edit the file `tests/test_module2.py` and remove the comments and also create a new pull request. This time the coverage should increase!
